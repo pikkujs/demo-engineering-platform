@@ -4,5 +4,26 @@
   "srcDirectories": ["src"],
   "outDir": ".pikku",
   "verboseMeta": true,
-  "console": true
+  "console": true,
+  "openAPI": {
+    "outputFile": "openapi.yml",
+    "additionalInfo": {
+      "info": {
+        "title": "Engineering Platform API",
+        "version": "1.0.0",
+        "description": "Demo engineering platform API"
+      },
+      "servers": [
+        { "url": "http://localhost:3000", "description": "Development" }
+      ],
+      "securitySchemes": {
+        "CookieAuth": {
+          "type": "apiKey",
+          "in": "cookie",
+          "name": "authjs.session-token"
+        }
+      },
+      "security": [{ "CookieAuth": [] }]
+    }
+  }
 }

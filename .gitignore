@@ -4,3 +4,4 @@ dist
 data/
 test/reports/
 *.tsbuildinfo
+openapi.yml
