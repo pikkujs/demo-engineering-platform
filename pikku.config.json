@@ -3,5 +3,6 @@
   "tsconfig": "./tsconfig.json",
   "srcDirectories": ["src"],
   "outDir": ".pikku",
-  "verboseMeta": true
+  "verboseMeta": true,
+  "console": true
 }
