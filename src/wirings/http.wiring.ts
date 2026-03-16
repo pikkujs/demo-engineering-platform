@@ -2,6 +2,7 @@ import { wireHTTPRoutes } from '#pikku/pikku-types.gen.js'
 import { createAuthRoutes } from '@pikku/auth-js'
 import Credentials from '@auth/core/providers/credentials'
 
+import type { Config } from '../application-types.js'
 import { resolveSession } from '../auth.js'
 
 import { getServices } from '../functions/get-services.function.js'
@@ -23,7 +24,7 @@ wireHTTPRoutes({
   routes: {
     // Auth.js routes (signin, callback, session, etc.)
     auth: createAuthRoutes((services) => ({
-      secret: services.config.authSecret,
+      secret: (services.config as Config).authSecret,
       trustHost: true,
       providers: [
         Credentials({
@@ -61,7 +62,7 @@ wireHTTPRoutes({
           return session
         },
       },
-    })),
+    })) as any,
 
     // API routes
     getServices: { route: '/api/services', method: 'get', func: getServices },
