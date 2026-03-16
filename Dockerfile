@@ -20,6 +20,8 @@ COPY --from=build /app/.pikku ./.pikku
 COPY --from=build /app/bin ./bin
 COPY --from=build /app/src ./src
 COPY --from=build /app/tsconfig.json ./
+COPY sql ./sql
+RUN mkdir -p data
 
 EXPOSE 4010
 
