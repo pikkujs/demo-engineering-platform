@@ -1,4 +1,5 @@
 app = "demo-engineering-platform"
+org = "makeanagent"
 primary_region = "iad"
 
 [build]
